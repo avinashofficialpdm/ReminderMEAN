@@ -1,0 +1,30 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center mt-4">
+            <h2>Login Page</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" action="">
+                <div class="form text-center mt-4">
+                    <input type="text" class="form-control mt-3" name="uname" formControlName="uname"
+                        placeholder="Username" id="uname" required>
+                    <div style="color:red;"
+                        *ngIf="(this.loginForm.get('uname')?.touched||this.loginForm.get('uname')?.dirty)&&this.loginForm.get('uname')?.errors">
+                        Invalid Username</div>
+
+                    <input type="text" class="form-control mt-3" name="pswd" formControlName="pswd"
+                        placeholder="password" id="login_password" required>
+                    <div style="color:red;"
+                        *ngIf="(this.loginForm.get('pswd')?.touched||this.loginForm.get('pswd')?.dirty)&&this.loginForm.get('pswd')?.errors">
+                        Invalid Password</div>
+
+                    <button type="submit" class="btn btn-success mt-3">Login</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
